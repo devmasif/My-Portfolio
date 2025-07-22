@@ -45,13 +45,6 @@ The project is currently deployed on <strong>Railway</strong> and is accessible 
 🔗 <a href="https://m-asif.up.railway.app" target="_blank">https://m-asif.up.railway.app</a>
 </p>
 
-<p>
-To redeploy after making changes:
-<ol>
-  <li>Push your latest commits to the <code>main</code> branch on GitHub.</li>
-  <li>Railway automatically detects changes and redeploys.</li>
-</ol>
-</p>
 
 <h2>🧠 Features</h2>
 <ul>
@@ -75,18 +68,9 @@ To redeploy after making changes:
 </code>
 </pre>
 
-<h2>✍️ Customize</h2>
-<p>
-You can update:
-<ul>
-  <li>Your <strong>name, bio, and profile image</strong> in the <code>Hero</code> section.</li>
-  <li>Your <strong>projects</strong> in the <code>Projects</code> section.</li>
-  <li>Your <strong>social links and contact email</strong> in the <code>Footer</code> or <code>Contact</code> section.</li>
-</ul>
-</p>
 
 <h2>📬 Contact</h2>
 <ul>
   <li>GitHub: <a href="https://github.com/devmasif" target="_blank">github.com/devmasif</a></li>
-  <li>Email: <em>asif@example.com</em> <strong>(replace with actual email)</strong></li>
+  <li>Email: m.ali83075@gmail.com</strong></li>
 </ul>
