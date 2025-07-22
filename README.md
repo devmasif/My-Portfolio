@@ -45,13 +45,6 @@ The project is currently deployed on <strong>Railway</strong> and is accessible 
 🔗 <a href="https://m-asif.up.railway.app" target="_blank">https://m-asif.up.railway.app</a>
 </p>
 
-<p>
-To redeploy after making changes:
-<ol>
-  <li>Push your latest commits to the <code>main</code> branch on GitHub.</li>
-  <li>Railway automatically detects changes and redeploys.</li>
-</ol>
-</p>
 
 <h2>🧠 Features</h2>
 <ul>
