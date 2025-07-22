@@ -72,5 +72,5 @@ The project is currently deployed on <strong>Railway</strong> and is accessible 
 <h2>📬 Contact</h2>
 <ul>
   <li>GitHub: <a href="https://github.com/devmasif" target="_blank">github.com/devmasif</a></li>
-  <li>Email: m.ali83075@gmail.com)</strong></li>
+  <li>Email: m.ali83075@gmail.com</strong></li>
 </ul>
