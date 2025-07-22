@@ -19,10 +19,11 @@ const ChatBot = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [apiKey, setApiKey] = useState(() => localStorage.getItem('openai-api-key') || '');
-  const [showApiKeyInput, setShowApiKeyInput] = useState(!apiKey);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
+
+  // Get API key from .env (Vite style)
+  const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -32,28 +33,15 @@ const ChatBot = () => {
     scrollToBottom();
   }, [messages]);
 
-  const saveApiKey = () => {
-    if (!apiKey.trim()) {
-      toast({
-        title: "Error",
-        description: "Please enter a valid API key",
-        variant: "destructive",
-      });
-      return;
-    }
-    localStorage.setItem('openai-api-key', apiKey);
-    setShowApiKeyInput(false);
-    toast({
-      title: "API Key Saved",
-      description: "You can now start chatting!",
-    });
-  };
-
   const sendMessage = async () => {
     if (!inputValue.trim() || isLoading) return;
-    
+
     if (!apiKey) {
-      setShowApiKeyInput(true);
+      toast({
+        title: "Error",
+        description: "OpenAI API key is not set in environment variables.",
+        variant: "destructive",
+      });
       return;
     }
 
@@ -75,11 +63,11 @@ const ChatBot = () => {
       });
 
       const response = await openai.chat.completions.create({
-        model: "gpt-3.5-turbo",
+        model: "gpt-mini-4o",
         messages: [
           {
             role: "system",
-            content: "You are a helpful AI assistant for Muhammad Asif's portfolio website. Be concise and friendly."
+            content: "You are a helpful AI assistant for Muhammad Asif's portfolio website. Only answer questions related to web development, web technologies, or this portfolio. Politely refuse to answer anything else."
           },
           ...messages.map(msg => ({
             role: msg.isUser ? "user" as const : "assistant" as const,
@@ -135,14 +123,7 @@ const ChatBot = () => {
           <div className="flex items-center justify-between p-4 border-b border-primary/20">
             <h3 className="font-semibold text-primary">AI Assistant</h3>
             <div className="flex gap-2">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setShowApiKeyInput(!showApiKeyInput)}
-                className="h-8 w-8"
-              >
-                <Settings size={16} />
-              </Button>
+              {/* Settings button removed since API key input is gone */}
               <Button
                 variant="ghost"
                 size="icon"
@@ -153,22 +134,6 @@ const ChatBot = () => {
               </Button>
             </div>
           </div>
-
-          {/* API Key Input */}
-          {showApiKeyInput && (
-            <div className="p-3 border-b border-primary/20 space-y-2">
-              <Input
-                type="password"
-                placeholder="Enter OpenAI API Key"
-                value={apiKey}
-                onChange={(e) => setApiKey(e.target.value)}
-                className="text-sm"
-              />
-              <Button onClick={saveApiKey} size="sm" className="w-full">
-                Save API Key
-              </Button>
-            </div>
-          )}
 
           {/* Messages */}
           <ScrollArea className="flex-1 p-4">
@@ -184,11 +149,10 @@ const ChatBot = () => {
                   className={`flex ${message.isUser ? 'justify-end' : 'justify-start'}`}
                 >
                   <div
-                    className={`max-w-[80%] p-2 rounded-lg text-sm ${
-                      message.isUser
-                        ? 'bg-primary text-primary-foreground'
-                        : 'bg-muted text-foreground'
-                    }`}
+                    className={`max-w-[80%] p-2 rounded-lg text-sm ${message.isUser
+                      ? 'bg-primary text-primary-foreground'
+                      : 'bg-muted text-foreground'
+                      }`}
                   >
                     {message.text}
                   </div>
@@ -236,3 +200,4 @@ const ChatBot = () => {
 };
 
 export default ChatBot;
+// ...existing code...
