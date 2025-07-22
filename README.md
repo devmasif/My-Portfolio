@@ -68,18 +68,9 @@ The project is currently deployed on <strong>Railway</strong> and is accessible 
 </code>
 </pre>
 
-<h2>✍️ Customize</h2>
-<p>
-You can update:
-<ul>
-  <li>Your <strong>name, bio, and profile image</strong> in the <code>Hero</code> section.</li>
-  <li>Your <strong>projects</strong> in the <code>Projects</code> section.</li>
-  <li>Your <strong>social links and contact email</strong> in the <code>Footer</code> or <code>Contact</code> section.</li>
-</ul>
-</p>
 
 <h2>📬 Contact</h2>
 <ul>
   <li>GitHub: <a href="https://github.com/devmasif" target="_blank">github.com/devmasif</a></li>
-  <li>Email: <em>asif@example.com</em> <strong>(replace with actual email)</strong></li>
+  <li>Email: m.ali83075@gmail.com)</strong></li>
 </ul>
