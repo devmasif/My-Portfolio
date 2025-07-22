@@ -3,14 +3,12 @@ import { GraduationCap, Briefcase, Code2, Database, Shield, Bot } from "lucide-r
 
 const AboutSection = () => {
   const skills = [
-    { name: "C++", level: 90 },
-    { name: "Python", level: 85 },
+    { name: "C++", level: 80 },
+    { name: "Python", level: 80 },
     { name: "JavaScript", level: 80 },
     { name: "FastAPI", level: 85 },
     { name: "MongoDB", level: 80 },
-    { name: "Backend Systems", level: 90 },
-    { name: "DSA", level: 85 },
-    { name: "AI/LLMs", level: 75 }
+    { name: "AI/LLMs", level: 60 }
   ];
 
   return (
@@ -22,7 +20,7 @@ const AboutSection = () => {
             About Me
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A passionate backend developer with a strong foundation in computer science and 
+            A passionate backend developer with a strong foundation in computer science and
             hands-on experience building scalable systems and innovative solutions.
           </p>
         </div>
@@ -65,7 +63,7 @@ const AboutSection = () => {
                   <p className="text-primary font-medium">Software Developer Intern</p>
                   <p className="text-muted-foreground mb-3">Summer 2025</p>
                   <p className="text-sm text-muted-foreground">
-                    Working on frontend, backend, and LLM integration projects. 
+                    Working on frontend, backend, and LLM integration projects.
                     Developing APIs, authentication systems, and AI-powered tools.
                   </p>
                 </div>
@@ -89,9 +87,9 @@ const AboutSection = () => {
                         <span className="text-sm text-muted-foreground">{skill.level}%</span>
                       </div>
                       <div className="w-full bg-muted/30 rounded-full h-2">
-                        <div 
+                        <div
                           className="bg-gradient-to-r from-primary to-accent h-2 rounded-full transition-all duration-1000 ease-out"
-                          style={{ 
+                          style={{
                             width: `${skill.level}%`,
                             animationDelay: `${index * 100}ms`
                           }}
